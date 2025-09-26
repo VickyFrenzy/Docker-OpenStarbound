@@ -16,10 +16,10 @@ USER $USERNAME
 
 VOLUME ["/starbound"]
 
-ADD start.sh /start.sh
+ADD --chmod=0755 start.sh /start.sh
 
 WORKDIR /
 
 EXPOSE 21025
 
-ENTRYPOINT ["./start.sh"]
+ENTRYPOINT ["bash", "/start.sh"]
